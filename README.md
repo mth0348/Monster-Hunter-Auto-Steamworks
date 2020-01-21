@@ -6,3 +6,5 @@ Also applicable for other cases.
 * optional check for active window's title is configurable.
 
 ![Preview v0.1](https://i.imgur.com/sm0bgTe.png)
+
+You can download the latest version here: https://github.com/mth0348/Monster-Hunter-Auto-Steamworks/blob/master/MonsterHunterAutoSteamworks/download/MonsterHunterAutoSteamworks.zip
