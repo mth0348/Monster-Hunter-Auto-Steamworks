@@ -46,6 +46,8 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.CheckboxText = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.ResetLink = new System.Windows.Forms.LinkLabel();
+			this.ApplyMhwLink = new System.Windows.Forms.LinkLabel();
 			this.GroupBox.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.TimerIntervalTextBox)).BeginInit();
 			this.SuspendLayout();
@@ -53,7 +55,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(86, 125);
+			this.label1.Location = new System.Drawing.Point(86, 130);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(136, 13);
 			this.label1.TabIndex = 0;
@@ -63,7 +65,7 @@
 			// 
 			this.LabelRunning.AutoSize = true;
 			this.LabelRunning.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.LabelRunning.Location = new System.Drawing.Point(96, 112);
+			this.LabelRunning.Location = new System.Drawing.Point(96, 117);
 			this.LabelRunning.Name = "LabelRunning";
 			this.LabelRunning.Size = new System.Drawing.Size(114, 13);
 			this.LabelRunning.TabIndex = 2;
@@ -76,6 +78,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.GroupBox.BackColor = System.Drawing.SystemColors.Control;
+			this.GroupBox.Controls.Add(this.ApplyMhwLink);
+			this.GroupBox.Controls.Add(this.ResetLink);
 			this.GroupBox.Controls.Add(this.LabelRunning);
 			this.GroupBox.Controls.Add(this.ProgramCheckBox);
 			this.GroupBox.Controls.Add(this.TimerIntervalTextBox);
@@ -89,7 +93,7 @@
 			this.GroupBox.Controls.Add(this.label1);
 			this.GroupBox.Location = new System.Drawing.Point(12, 12);
 			this.GroupBox.Name = "GroupBox";
-			this.GroupBox.Size = new System.Drawing.Size(328, 150);
+			this.GroupBox.Size = new System.Drawing.Size(328, 193);
 			this.GroupBox.TabIndex = 3;
 			this.GroupBox.TabStop = false;
 			this.GroupBox.Text = "Settings";
@@ -190,12 +194,34 @@
 			this.label2.TabIndex = 0;
 			this.label2.Text = "This will repeatedly press ";
 			// 
+			// ResetLink
+			// 
+			this.ResetLink.AutoSize = true;
+			this.ResetLink.Location = new System.Drawing.Point(6, 168);
+			this.ResetLink.Name = "ResetLink";
+			this.ResetLink.Size = new System.Drawing.Size(69, 13);
+			this.ResetLink.TabIndex = 3;
+			this.ResetLink.TabStop = true;
+			this.ResetLink.Text = "reset settings";
+			this.ResetLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ResetLink_LinkClicked);
+			// 
+			// ApplyMhwLink
+			// 
+			this.ApplyMhwLink.AutoSize = true;
+			this.ApplyMhwLink.Location = new System.Drawing.Point(129, 168);
+			this.ApplyMhwLink.Name = "ApplyMhwLink";
+			this.ApplyMhwLink.Size = new System.Drawing.Size(193, 13);
+			this.ApplyMhwLink.TabIndex = 4;
+			this.ApplyMhwLink.TabStop = true;
+			this.ApplyMhwLink.Text = "apply settings for Monster Hunter World";
+			this.ApplyMhwLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ApplyMhwLink_LinkClicked);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(352, 174);
+			this.ClientSize = new System.Drawing.Size(352, 217);
 			this.Controls.Add(this.GroupBox);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
@@ -221,6 +247,8 @@
 		private System.Windows.Forms.TextBox ProgramTitleTextBox;
 		private System.Windows.Forms.Label CheckboxText;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.LinkLabel ApplyMhwLink;
+		private System.Windows.Forms.LinkLabel ResetLink;
 	}
 }
 

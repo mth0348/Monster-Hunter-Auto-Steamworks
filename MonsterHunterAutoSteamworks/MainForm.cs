@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MonsterHunterAutoSteamworks.Properties;
+
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -18,6 +20,15 @@ namespace MonsterHunterAutoSteamworks
 
 			_timer = new Timer();
 			_timer.Tick += SendKey;
+
+			UpdateFormFieldsWithSettings();
+		}
+
+		protected override void OnClosed(EventArgs e)
+		{
+			SaveSettings(KeyTextBox.Text, (int)TimerIntervalTextBox.Value, ProgramCheckBox.Checked, ProgramTitleTextBox.Text);
+
+			base.OnClosed(e);
 		}
 
 		private void ProgramCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -62,6 +73,37 @@ namespace MonsterHunterAutoSteamworks
 				this.BackColor = SystemColors.Control;
 				_timer.Stop();
 			}
+		}
+
+		private void ResetLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			SaveSettings();
+		}
+
+		private void ApplyMhwLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			SaveSettings("{SPACE}", 200, true, "MONSTER HUNTER");
+		}
+
+		private void SaveSettings(string key = default, int interval = 100, bool shouldCheckTitle = default, string titleToCheck = default)
+		{
+			Settings.Default.Key = key ?? string.Empty;
+			Settings.Default.Interval = interval;
+			Settings.Default.ShouldCheckTitle = shouldCheckTitle;
+			Settings.Default.TitleToCheck = titleToCheck ?? string.Empty;
+			Settings.Default.Save();
+
+			UpdateFormFieldsWithSettings();
+		}
+
+		private void UpdateFormFieldsWithSettings()
+		{
+			KeyTextBox.Text = Settings.Default.Key;
+			TimerIntervalTextBox.Value = Settings.Default.Interval;
+			ProgramCheckBox.Checked = Settings.Default.ShouldCheckTitle;
+			ProgramTitleTextBox.Text = Settings.Default.TitleToCheck;
+
+			ProgramCheckBox_CheckedChanged(null, null);
 		}
 	}
 }
