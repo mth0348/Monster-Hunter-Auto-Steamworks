@@ -7,4 +7,4 @@ Also applicable for other cases.
 
 ![Preview v0.1](https://i.imgur.com/sm0bgTe.png)
 
-You can download the latest version here: https://github.com/mth0348/Monster-Hunter-Auto-Steamworks/blob/master/MonsterHunterAutoSteamworks/download/MonsterHunterAutoSteamworks.zip
+You can download the latest version here: https://github.com/mth0348/Monster-Hunter-Auto-Steamworks/raw/master/MonsterHunterAutoSteamworks/download/MonsterHunterAutoSteamworks.zip
