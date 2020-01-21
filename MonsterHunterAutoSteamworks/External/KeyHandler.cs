@@ -12,30 +12,30 @@ namespace MonsterHunterAutoSteamworks
 		[DllImport("user32.dll")]
 		private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
-		private int key;
-		private IntPtr hWnd;
-		private int id;
+		private readonly int _key;
+		private readonly IntPtr _hWnd;
+		private readonly int _id;
 
 		public KeyHandler(Keys key, Form form)
 		{
-			this.key = (int)key;
-			this.hWnd = form.Handle;
-			id = this.GetHashCode();
+			_key = (int)key;
+			_hWnd = form.Handle;
+			_id = this.GetHashCode();
 		}
 
 		public override int GetHashCode()
 		{
-			return key ^ hWnd.ToInt32();
+			return _key ^ _hWnd.ToInt32();
 		}
 
 		public bool Register()
 		{
-			return RegisterHotKey(hWnd, id, 0, key);
+			return RegisterHotKey(_hWnd, _id, 0, _key);
 		}
 
-		public bool Unregiser()
+		public bool Unregister()
 		{
-			return UnregisterHotKey(hWnd, id);
+			return UnregisterHotKey(_hWnd, _id);
 		}
 	}
 }

@@ -2,6 +2,8 @@
 {
 	partial class MainForm
 	{
+		private readonly KeyHandler _globalKeyHandler;
+
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -17,6 +19,9 @@
 			{
 				components.Dispose();
 			}
+
+			_globalKeyHandler.Unregister();
+
 			base.Dispose(disposing);
 		}
 
