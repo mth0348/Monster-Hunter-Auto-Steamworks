@@ -82,7 +82,7 @@ namespace MonsterHunterAutoSteamworks
 
 		private void ApplyMhwLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			SaveSettings("{SPACE}", 200, true, "MONSTER HUNTER");
+			SaveSettings("{SPACE}", 100, true, "MONSTER HUNTER");
 		}
 
 		private void SaveSettings(string key = default, int interval = 100, bool shouldCheckTitle = default, string titleToCheck = default)
